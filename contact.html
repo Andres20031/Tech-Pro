@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TechPro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">TechPro</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="index.html#features">Características</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+                <li><a href="contact.html" class="active">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Estamos aquí para ayudarte</div>
+                <h1>Contáctanos</h1>
+                <p>¿Tienes preguntas sobre nuestros productos? ¿Necesitas soporte técnico? Nuestro equipo está listo para asistirte.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-options">
+                <div class="contact-option">
+                    <div class="option-icon">📞</div>
+                    <h3>Llámanos</h3>
+                    <p>Soporte telefónico 24/7</p>
+                    <div class="contact-info">
+                        <strong>+1 (555) 123-4567</strong>
+                        <span>Gratis desde cualquier país</span>
+                    </div>
+                </div>
+                <div class="contact-option">
+                    <div class="option-icon">💬</div>
+                    <h3>Chat en Vivo</h3>
+                    <p>Respuesta inmediata online</p>
+                    <button class="btn-chat" id="start-chat">Iniciar Chat</button>
+                </div>
+                <div class="contact-option">
+                    <div class="option-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>Te respondemos en 2 horas</p>
+                    <div class="contact-info">
+                        <strong>support@techpro.com</strong>
+                        <span>Disponible 24/7</span>
+                    </div>
+                </div>
+                <div class="contact-option">
+                    <div class="option-icon">📍</div>
+                    <h3>Visítanos</h3>
+                    <p>Oficinas principales</p>
+                    <div class="contact-info">
+                        <strong>San Francisco, CA</strong>
+                        <span>Lun-Vie 9:00-18:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Envíanos un mensaje</h2>
+                    <p>Completa el formulario y nos pondremos en contacto contigo lo antes posible</p>
+                </div>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Nombre</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellido</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono (opcional)</label>
+                            <input type="tel" id="phone" name="phone">
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Selecciona un tema</option>
+                            <option value="support">Soporte técnico</option>
+                            <option value="sales">Consultas de ventas</option>
+                            <option value="partnership">Asociaciones</option>
+                            <option value="feedback">Comentarios</option>
+                            <option value="other">Otro</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Describe tu consulta o problema detalladamente..."></textarea>
+                        <span class="error-message"></span>
+                        <div class="char-counter">
+                            <span id="char-count">0</span>/1000 caracteres
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Quiero recibir actualizaciones y ofertas por email
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span class="checkmark"></span>
+                            Acepto la <a href="#" class="privacy-link">política de privacidad</a>
+                        </label>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" id="submit-btn">
+                            <span class="btn-text">Enviar mensaje</span>
+                            <div class="btn-loader"></div>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="form-success" class="success-message" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>¡Mensaje enviado!</h3>
+                    <p>Gracias por contactarnos. Te responderemos dentro de las próximas 2 horas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Center -->
+    <section class="support-center">
+        <div class="container">
+            <h2 class="section-title">Centro de Soporte</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">📚</div>
+                    <h3>Base de Conocimientos</h3>
+                    <p>Encuentra respuestas a las preguntas más frecuentes</p>
+                    <ul class="support-links">
+                        <li><a href="#">Guía de configuración inicial</a></li>
+                        <li><a href="#">Solución de problemas comunes</a></li>
+                        <li><a href="#">Tutoriales paso a paso</a></li>
+                        <li><a href="#">Especificaciones técnicas</a></li>
+                    </ul>
+                    <button class="btn-support">Ver todos los artículos</button>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon">🎥</div>
+                    <h3>Tutoriales en Video</h3>
+                    <p>Aprende a usar tus productos con videos explicativos</p>
+                    <ul class="support-links">
+                        <li><a href="#">Configuración inicial</a></li>
+                        <li><a href="#">Funciones avanzadas</a></li>
+                        <li><a href="#">Mantenimiento y cuidado</a></li>
+                        <li><a href="#">Resolución de problemas</a></li>
+                    </ul>
+                    <button class="btn-support">Ver tutoriales</button>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon">🛠️</div>
+                    <h3>Reparación y Servicio</h3>
+                    <p>Programa una reparación o consulta el estado</p>
+                    <ul class="support-links">
+                        <li><a href="#">Solicitar reparación</a></li>
+                        <li><a href="#">Estado de mi reparación</a></li>
+                        <li><a href="#">Centros de servicio</a></li>
+                        <li><a href="#">Garantía y cobertura</a></li>
+                    </ul>
+                    <button class="btn-support">Iniciar solicitud</button>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon">💡</div>
+                    <h3>Comunidad</h3>
+                    <p>Conéctate con otros usuarios y expertos</p>
+                    <ul class="support-links">
+                        <li><a href="#">Foros de discusión</a></li>
+                        <li><a href="#">Consejos y trucos</a></li>
+                        <li><a href="#">Casos de uso</a></li>
+                        <li><a href="#">Eventos y webinars</a></li>
+                    </ul>
+                    <button class="btn-support">Unirse a la comunidad</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="office-locations">
+        <div class="container">
+            <h2 class="section-title">Nuestras Oficinas</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-image sf"></div>
+                    <div class="location-info">
+                        <h3>San Francisco</h3>
+                        <p class="location-type">Oficina Principal</p>
+                        <div class="address">
+                            <p>1 Infinite Loop<br>
+                            Cupertino, CA 95014<br>
+                            Estados Unidos</p>
+                        </div>
+                        <div class="location-contact">
+                            <div class="contact-item">
+                                <span class="contact-label">Teléfono:</span>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Horario:</span>
+                                <span>Lun-Vie 9:00-18:00</span>
+                            </div>
+                        </div>
+                        <button class="btn-location">Ver en mapa</button>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-image ny"></div>
+                    <div class="location-info">
+                        <h3>Nueva York</h3>
+                        <p class="location-type">Oficina Regional</p>
+                        <div class="address">
+                            <p>Times Square Tower<br>
+                            New York, NY 10036<br>
+                            Estados Unidos</p>
+                        </div>
+                        <div class="location-contact">
+                            <div class="contact-item">
+                                <span class="contact-label">Teléfono:</span>
+                                <span>+1 (555) 987-6543</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Horario:</span>
+                                <span>Lun-Vie 8:00-17:00</span>
+                            </div>
+                        </div>
+                        <button class="btn-location">Ver en mapa</button>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-image london"></div>
+                    <div class="location-info">
+                        <h3>Londres</h3>
+                        <p class="location-type">Oficina Europa</p>
+                        <div class="address">
+                            <p>Tech Hub London<br>
+                            London EC2A 4NE<br>
+                            Reino Unido</p>
+                        </div>
+                        <div class="location-contact">
+                            <div class="contact-item">
+                                <span class="contact-label">Teléfono:</span>
+                                <span>+44 20 1234 5678</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Horario:</span>
+                                <span>Lun-Vie 9:00-17:30</span>
+                            </div>
+                        </div>
+                        <button class="btn-location">Ver en mapa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="interactive-map">
+        <div class="container">
+            <h2 class="section-title">Encuéntranos</h2>
+            <div class="map-container">
+                <div id="map" class="map-placeholder">
+                    <div class="map-overlay">
+                        <h3>Mapa Interactivo</h3>
+                        <p>Haz clic para ver nuestras ubicaciones</p>
+                        <button class="btn-load-map" id="load-map">Cargar Mapa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="chat-widget">
+        <div class="chat-header">
+            <div class="chat-avatar"></div>
+            <div class="chat-info">
+                <h4>Soporte TechPro</h4>
+                <span class="chat-status online">En línea</span>
+            </div>
+            <button class="chat-close" id="close-chat">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message bot">
+                <div class="message-content">
+                    <p>¡Hola! Soy el asistente virtual de TechPro. ¿En qué puedo ayudarte hoy?</p>
+                </div>
+                <div class="message-time">Ahora</div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+            <button id="send-message">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TechPro</h4>
+                    <p>Innovación que transforma vidas</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="products.html">Smartphones</a></li>
+                        <li><a href="products.html">Tablets</a></li>
+                        <li><a href="products.html">Laptops</a></li>
+                        <li><a href="products.html">Accesorios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="contact.html">Centro de ayuda</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="#">Reparaciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Prensa</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

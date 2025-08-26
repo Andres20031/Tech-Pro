@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - TechPro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">TechPro</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="products.html" class="active">Productos</a></li>
+                <li><a href="index.html#features">Características</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Descubre nuestra línea completa</h1>
+            <p>Tecnología innovadora diseñada para transformar tu experiencia digital</p>
+        </div>
+    </section>
+
+    <!-- Filters and Search -->
+    <section class="product-filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="search-container">
+                    <input type="text" id="product-search" placeholder="Buscar productos...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="smartphones">Smartphones</button>
+                    <button class="filter-btn" data-category="tablets">Tablets</button>
+                    <button class="filter-btn" data-category="laptops">Laptops</button>
+                    <button class="filter-btn" data-category="accessories">Accesorios</button>
+                </div>
+
+                <div class="sort-container">
+                    <select id="sort-products">
+                        <option value="name">Nombre</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="rating">Calificación</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="products-grid">
+                
+                <!-- TechPro Max Series -->
+                <div class="product-card" data-category="smartphones" data-name="TechPro Max Pro" data-price="1499" data-rating="4.9">
+                    <div class="product-badge">Nuevo</div>
+                    <div class="product-image-container">
+                        <div class="product-image pro"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #1d1d1f" data-color="negro"></span>
+                            <span class="color-option" style="background: #f5f5dc" data-color="dorado"></span>
+                            <span class="color-option" style="background: #c0c0c0" data-color="plata"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Max Pro</h3>
+                        <p class="product-description">El smartphone más avanzado con tecnología de vanguardia y diseño premium</p>
+                        <div class="product-specs">
+                            <span>6.7" OLED</span>
+                            <span>256GB</span>
+                            <span>5G</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">(4.9) 1,234 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$1,499</div>
+                            <div class="price-info">o $62.46/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-max-pro">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="smartphones" data-name="TechPro Max" data-price="1299" data-rating="4.8">
+                    <div class="product-image-container">
+                        <div class="product-image max"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #0071e3" data-color="azul"></span>
+                            <span class="color-option" style="background: #1d1d1f" data-color="negro"></span>
+                            <span class="color-option" style="background: #ff3b30" data-color="rojo"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Max</h3>
+                        <p class="product-description">Potencia y elegancia en perfecta armonía para el usuario exigente</p>
+                        <div class="product-specs">
+                            <span>6.1" OLED</span>
+                            <span>128GB</span>
+                            <span>5G</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">(4.8) 987 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$1,299</div>
+                            <div class="price-info">o $54.13/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-max">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TechPro Air Series -->
+                <div class="product-card" data-category="smartphones" data-name="TechPro Air" data-price="899" data-rating="4.7">
+                    <div class="product-image-container">
+                        <div class="product-image air"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #f5f5dc" data-color="dorado"></span>
+                            <span class="color-option" style="background: #ff9500" data-color="naranja"></span>
+                            <span class="color-option" style="background: #34c759" data-color="verde"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Air</h3>
+                        <p class="product-description">Ultraligero y poderoso, perfecto para quienes valoran la movilidad</p>
+                        <div class="product-specs">
+                            <span>6.0" LCD</span>
+                            <span>128GB</span>
+                            <span>4G+</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-text">(4.7) 756 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$899</div>
+                            <div class="price-info">o $37.46/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-air">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TechPro Mini -->
+                <div class="product-card" data-category="smartphones" data-name="TechPro Mini" data-price="599" data-rating="4.6">
+                    <div class="product-image-container">
+                        <div class="product-image mini"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #ff3b30" data-color="rojo"></span>
+                            <span class="color-option" style="background: #007aff" data-color="azul"></span>
+                            <span class="color-option" style="background: #1d1d1f" data-color="negro"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Mini</h3>
+                        <p class="product-description">Tamaño compacto, grandes posibilidades para el día a día</p>
+                        <div class="product-specs">
+                            <span>5.4" LCD</span>
+                            <span>64GB</span>
+                            <span>4G</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-text">(4.6) 543 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$599</div>
+                            <div class="price-info">o $24.96/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-mini">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tablets -->
+                <div class="product-card" data-category="tablets" data-name="TechPro Tablet Pro" data-price="1199" data-rating="4.8">
+                    <div class="product-badge">Profesional</div>
+                    <div class="product-image-container">
+                        <div class="product-image tablet-pro"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #c0c0c0" data-color="plata"></span>
+                            <span class="color-option" style="background: #1d1d1f" data-color="gris"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Tablet Pro</h3>
+                        <p class="product-description">Tablet profesional con pantalla de 12.9" y compatibilidad con stylus</p>
+                        <div class="product-specs">
+                            <span>12.9" 4K</span>
+                            <span>512GB</span>
+                            <span>Wi-Fi 6</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">(4.8) 321 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$1,199</div>
+                            <div class="price-info">o $49.96/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-tablet-pro">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tablets" data-name="TechPro Tablet" data-price="799" data-rating="4.5">
+                    <div class="product-image-container">
+                        <div class="product-image tablet"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #0071e3" data-color="azul"></span>
+                            <span class="color-option" style="background: #ff9500" data-color="naranja"></span>
+                            <span class="color-option" style="background: #34c759" data-color="verde"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Tablet</h3>
+                        <p class="product-description">Tablet versátil ideal para entretenimiento y productividad básica</p>
+                        <div class="product-specs">
+                            <span>10.2" HD</span>
+                            <span>128GB</span>
+                            <span>Wi-Fi</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-text">(4.5) 567 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$799</div>
+                            <div class="price-info">o $33.29/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-tablet">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laptops -->
+                <div class="product-card" data-category="laptops" data-name="TechPro Book Pro" data-price="2299" data-rating="4.9">
+                    <div class="product-badge">Pro</div>
+                    <div class="product-image-container">
+                        <div class="product-image laptop-pro"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #c0c0c0" data-color="plata"></span>
+                            <span class="color-option" style="background: #1d1d1f" data-color="gris"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Book Pro</h3>
+                        <p class="product-description">Laptop profesional de alto rendimiento para creativos y desarrolladores</p>
+                        <div class="product-specs">
+                            <span>16" 4K</span>
+                            <span>1TB SSD</span>
+                            <span>32GB RAM</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">(4.9) 234 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$2,299</div>
+                            <div class="price-info">o $95.79/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-book-pro">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="laptops" data-name="TechPro Book Air" data-price="1499" data-rating="4.7">
+                    <div class="product-image-container">
+                        <div class="product-image laptop-air"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #f5f5dc" data-color="dorado"></span>
+                            <span class="color-option" style="background: #c0c0c0" data-color="plata"></span>
+                            <span class="color-option" style="background: #ff9500" data-color="naranja"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Book Air</h3>
+                        <p class="product-description">Laptop ultradelgada perfecta para trabajo y estudio</p>
+                        <div class="product-specs">
+                            <span>13.3" 2K</span>
+                            <span>512GB SSD</span>
+                            <span>16GB RAM</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-text">(4.7) 445 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$1,499</div>
+                            <div class="price-info">o $62.46/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-book-air">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="product-card" data-category="accessories" data-name="TechPro Earbuds Pro" data-price="299" data-rating="4.6">
+                    <div class="product-image-container">
+                        <div class="product-image earbuds"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #ffffff; border: 1px solid #ccc" data-color="blanco"></span>
+                            <span class="color-option" style="background: #1d1d1f" data-color="negro"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Earbuds Pro</h3>
+                        <p class="product-description">Auriculares inalámbricos con cancelación activa de ruido</p>
+                        <div class="product-specs">
+                            <span>30hrs batería</span>
+                            <span>ANC</span>
+                            <span>Bluetooth 5.3</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-text">(4.6) 1,123 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$299</div>
+                            <div class="price-info">o $12.46/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-earbuds-pro">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories" data-name="TechPro Watch" data-price="399" data-rating="4.5">
+                    <div class="product-image-container">
+                        <div class="product-image watch"></div>
+                        <div class="product-colors">
+                            <span class="color-option" style="background: #1d1d1f" data-color="negro"></span>
+                            <span class="color-option" style="background: #c0c0c0" data-color="plata"></span>
+                            <span class="color-option" style="background: #ff3b30" data-color="rojo"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>TechPro Watch</h3>
+                        <p class="product-description">Smartwatch avanzado con monitoreo de salud y fitness</p>
+                        <div class="product-specs">
+                            <span>45mm</span>
+                            <span>GPS</span>
+                            <span>5ATM</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-text">(4.5) 876 reseñas</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price">$399</div>
+                            <div class="price-info">o $16.63/mes por 24 meses</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart">Agregar al carrito</button>
+                            <button class="btn-compare" data-product="techpro-watch">Comparar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Modal -->
+    <div id="comparison-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Comparar Productos</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="comparison-table"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Carrito de Compras</h3>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be populated here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0</span></strong>
+            </div>
+            <button class="btn-checkout">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TechPro</h4>
+                    <p>Innovación que transforma vidas</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Tablets</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Envíos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
