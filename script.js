@@ -224,6 +224,7 @@ function initializeStatsCounters() {
 }
 
 // Products carousel functionality
+// Products carousel functionality - CORREGIDO
 function initializeProductsCarousel() {
     const carousel = document.querySelector('.products-slider');
     const cards = document.querySelectorAll('.product-card');
@@ -234,9 +235,20 @@ function initializeProductsCarousel() {
     if (!carousel || cards.length === 0) return;
 
     let currentIndex = 0;
-    const cardWidth = cards[0].offsetWidth + 30; // including gap
+    
+    // Calcular el ancho correcto incluyendo gap/margin
+    const computeCardWidth = () => {
+        const cardStyle = window.getComputedStyle(cards[0]);
+        const cardWidth = cards[0].offsetWidth;
+        const marginRight = parseInt(cardStyle.marginRight) || 0;
+        const gap = 30; // El gap definido en CSS
+        return cardWidth + gap;
+    };
+    
+    let cardWidth = computeCardWidth();
 
-    // Create dots
+    // Limpiar dots existentes y crear nuevos
+    dotsContainer.innerHTML = '';
     cards.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
@@ -247,19 +259,22 @@ function initializeProductsCarousel() {
     const dots = document.querySelectorAll('.carousel-dot');
 
     function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        const translateX = -currentIndex * cardWidth;
+        carousel.style.transform = `translateX(${translateX}px)`;
+        
+        // Actualizar dots
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
     }
 
     function goToSlide(index) {
-        currentIndex = index;
+        currentIndex = Math.max(0, Math.min(index, cards.length - 1));
         updateCarousel();
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % cards.length;
+        currentIndex = currentIndex < cards.length - 1 ? currentIndex + 1 : 0;
         updateCarousel();
     }
 
@@ -268,12 +283,75 @@ function initializeProductsCarousel() {
         updateCarousel();
     }
 
+    // Event listeners
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 
     // Auto-play carousel
-    setInterval(nextSlide, 5000);
+    let autoplayInterval = setInterval(nextSlide, 5000);
+    
+    // Pausar autoplay al hacer hover
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Soporte para touch/swipe en móviles
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    function handleTouchStart(e) {
+        startX = e.touches ? e.touches[0].clientX : e.clientX;
+        isDragging = true;
+    }
+
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        currentX = e.touches ? e.touches[0].clientX : e.clientX;
+    }
+
+    function handleTouchEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const diffX = startX - currentX;
+        const threshold = 50;
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }
+
+    // Eventos táctiles
+    carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
+    carousel.addEventListener('touchend', handleTouchEnd);
+
+    // Recalcular en resize
+    window.addEventListener('resize', () => {
+        cardWidth = computeCardWidth();
+        updateCarousel();
+    });
+
+    // Inicializar
+    updateCarousel();
 }
+
+// Reemplaza la función original en tu script.js con esta versión corregida
+// O agrega este código al final de tu script.js existente
+
+// Asegurarse de que se ejecute cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    initializeProductsCarousel();
+});
 
 // Testimonials carousel
 function initializeTestimonials() {
